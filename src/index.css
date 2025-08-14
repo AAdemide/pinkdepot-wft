@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root{
+    min-height:100%;
+    height:100vh;
+    color: rgb(132 204 22);
+}
+
+#dt-label, #dt-label:after, #dt-label:before {
+    transition: 0.3s;
+}
+#dt-label:after{
+    background: linear-gradient(rgba(255, 105, 180, 0.1), rgba(153,12,88,.9)), url("/sun-icon.svg");
+    background-size: 100%, 30px;
+    background-repeat: repeat, no-repeat;
+    background-position: 50% 50%;
+    border-radius: 36px;
+}
+#dt-label:active:after {
+    width: 50%
+}
+#darkmode-toggle:checked + #dt-label{
+    background-color: rgba(0, 0, 0, 0.544)
+}
+#darkmode-toggle:checked + #dt-label:after{
+    left: 98%;
+    transform: translateX(-100%);
+    background: linear-gradient(rgba(28, 27, 27, 0.1), rgb(132,204,22,.6)), url("/moon-icon.svg");
+    background-size: 100%, 30px;
+    background-repeat: repeat, no-repeat;
+    background-position: 50% 50%;
+}
+#darkmode-toggle:checked + #dt-label:before{
+    left: -10%;
+    transform: translateX(100%);
+    color: white;
+}
+
+.shopping-carts{
+    /* wtf is linear gradient */
+    background: linear-gradient(rgba(50,50,50,.5), rgba(50,50,50,.5)), url("/cart.jpeg");
+    background-size: cover;
+    background-position: 0 45%;
+}
+.loginBackground{
+    /* wtf is linear gradient */
+    background: radial-gradient(rgba(8, 7, 7, 0.6), rgba(153,12,88,1));
+}
+.loginBackgroundDark{
+    /* wtf is linear gradient */
+    background: radial-gradient(rgba(255, 105, 180, 0.1), rgba(153,12,88,.9));
+}
+/* input {
+    all: unset;
+} */
+.inputHover::placeholder {
+    color: rgb(140, 165, 103);
+}
+.inputHover:focus-visible {
+    border: 1px solid rgb(153,12,88);
+    box-sizing: border-box;
+    box-shadow: 0 0 2px 2px rgb(153,12,88);
+    outline: none;
+}
+
+@media  screen and (max-width: 570px),
+        screen and (max-height: 700px)  {
+    .formHouse{
+        max-width: 100vw; width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        /* position: absolute; */
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .width {
+        width: 400px;
+    }
+    .formSmall{
+        left: 5rem;
+    }
+    .bgSmall{
+        background: #201d1d;
+    }
+    html{
+        font-size: 12px;
+    }
+}
+@media  screen and (max-width: 430px),
+        screen and (max-height: 500px) {
+    .width {
+        width: 320px;
+    }
+    .formSmall{
+        left: 5rem;
+    }
+    
+    html{
+        font-size: 11px;
+    }
+}
+@media  screen and (max-width: 370px) {
+    .width {
+        width: 250px;
+    }
+    .formSmall{
+        left: 5rem;
+    }
+    
+    html{
+        font-size: 10px;
+    }
+}
